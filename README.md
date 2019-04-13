@@ -12,7 +12,7 @@ Each example is presented in different formats.
 
     E.g. [./handwritten/hello-world.ll](./handwritten/hello-world.ll)
 
-    Before trying to generate LLVM using a particular feature using Haskell, it helps to write it once manually.
+    Before trying to generate LLVM using a particular feature with Haskell, it helps to write it once manually.
 
 2. **Haskell**
 
