@@ -1,4 +1,5 @@
 name: llvm-in-haskell
+license: MIT
 default-extensions:
 
   # Notable

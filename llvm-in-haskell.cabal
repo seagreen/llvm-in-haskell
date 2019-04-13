@@ -4,10 +4,11 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 5d689a98b06d67779eb154e5227c1d755ebf7d64adb76c78b0decf4ec565871f
+-- hash: 0750689faf876f17a70295e573ba5c31fb9ba4c77a2139610f5b3a10b54d6138
 
 name:           llvm-in-haskell
 version:        0.0.0
+license:        MIT
 build-type:     Simple
 
 library
