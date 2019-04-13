@@ -24,22 +24,22 @@ spec = do
     it "in LLVM" $
       "handwritten/hello-world.ll" `evaluatesTo` "hello world\n"
     it "Haskell -> LLVM" $
-      compileAndEvaluate Example.helloWorld "hello-world" "hello world\n"
+      compileAndTest Example.helloWorld "hello-world" "hello world\n"
 
   describe "functions" $ do
     it "in LLVM" $
       "handwritten/functions.ll" `evaluatesTo` "5\n"
     it "Haskell -> LLVM" $
-      compileAndEvaluate Example.functions "functions" "5\n"
+      compileAndTest Example.functions "functions" "5\n"
 
   describe "branching" $ do
     it "in LLVM" $
       "handwritten/branching.ll" `evaluatesTo` "6\n"
     it "Haskell -> LLVM" $
-      compileAndEvaluate Example.branching "branching" "6\n"
+      compileAndTest Example.branching "branching" "6\n"
 
-generateLlvm :: AST.Module -> IO ByteString
-generateLlvm llvmModule =
+compile :: AST.Module -> IO ByteString
+compile llvmModule =
   withContext f
   where
     f :: Context -> IO ByteString
@@ -55,8 +55,8 @@ evaluatesTo path expected = do
   res <- readProcess "lli-7" [path] mempty
   T.pack res `shouldBe` expected
 
-compileAndEvaluate :: AST.Module -> [Char] -> Text -> IO ()
-compileAndEvaluate example filename expected = do
+compileAndTest :: AST.Module -> [Char] -> Text -> IO ()
+compileAndTest example filename expected = do
 
   -- Write the data structure we've created to a file for examination.
   --
@@ -65,7 +65,7 @@ compileAndEvaluate example filename expected = do
   writeFile ("generated/" <> filename <> ".hs") (Text.Show.Pretty.ppShow example)
 
   -- Write out the .ll file
-  BS.writeFile path =<< generateLlvm example
+  BS.writeFile path =<< compile example
 
   -- Evaluate the .ll file
   path `evaluatesTo` expected
