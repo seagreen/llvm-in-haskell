@@ -1,6 +1,6 @@
 # About
 
-Examples of how to use generate LLVM in Haskell with the libraries [llvm-hs](https://hackage.haskell.org/package/llvm-hs) and [llvm-hs-pure](https://hackage.haskell.org/package/llvm-hs-pure).
+Examples of how to generate LLVM in Haskell with the libraries [llvm-hs](https://hackage.haskell.org/package/llvm-hs) and [llvm-hs-pure](https://hackage.haskell.org/package/llvm-hs-pure).
 
 Meant to complement the more official [llvm-hs-examples](https://github.com/llvm-hs/llvm-hs-examples).
 
