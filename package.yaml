@@ -1,0 +1,61 @@
+name: llvm-in-haskell
+default-extensions:
+
+  # Notable
+
+  - StrictData
+
+  # Other
+
+  - DataKinds
+  - DeriveAnyClass
+  - DeriveFunctor
+  - DeriveGeneric
+  - DerivingStrategies
+  - ExistentialQuantification
+  - FlexibleContexts
+  - FlexibleInstances
+  - FunctionalDependencies
+  - GADTs
+  - GeneralizedNewtypeDeriving
+  - InstanceSigs
+  - LambdaCase
+  - MultiParamTypeClasses
+  - NamedFieldPuns
+  - NoImplicitPrelude
+  - OverloadedStrings
+  - RankNTypes
+  - ScopedTypeVariables
+  - TypeFamilies
+  - TypeOperators
+
+ghc-options: -Wall
+dependencies:
+
+  # Notable
+
+  - llvm-hs
+  - llvm-hs-pure
+  - pretty-show
+
+  # Other
+
+  - base
+  - bytestring
+  - containers
+  - directory
+  - filepath
+  - hashable
+  - process
+  - text
+  - unordered-containers
+
+library:
+  source-dirs: src
+tests:
+  spec:
+    source-dirs: test
+    main: Main.hs
+    dependencies:
+      - hspec
+      - llvm-in-haskell

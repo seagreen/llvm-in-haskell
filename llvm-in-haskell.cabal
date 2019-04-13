@@ -1,0 +1,61 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.1.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 5d689a98b06d67779eb154e5227c1d755ebf7d64adb76c78b0decf4ec565871f
+
+name:           llvm-in-haskell
+version:        0.0.0
+build-type:     Simple
+
+library
+  exposed-modules:
+      Example
+  other-modules:
+      Paths_llvm_in_haskell
+  hs-source-dirs:
+      src
+  default-extensions: StrictData DataKinds DeriveAnyClass DeriveFunctor DeriveGeneric DerivingStrategies ExistentialQuantification FlexibleContexts FlexibleInstances FunctionalDependencies GADTs GeneralizedNewtypeDeriving InstanceSigs LambdaCase MultiParamTypeClasses NamedFieldPuns NoImplicitPrelude OverloadedStrings RankNTypes ScopedTypeVariables TypeFamilies TypeOperators
+  ghc-options: -Wall
+  build-depends:
+      base
+    , bytestring
+    , containers
+    , directory
+    , filepath
+    , hashable
+    , llvm-hs
+    , llvm-hs-pure
+    , pretty-show
+    , process
+    , text
+    , unordered-containers
+  default-language: Haskell2010
+
+test-suite spec
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  other-modules:
+      Paths_llvm_in_haskell
+  hs-source-dirs:
+      test
+  default-extensions: StrictData DataKinds DeriveAnyClass DeriveFunctor DeriveGeneric DerivingStrategies ExistentialQuantification FlexibleContexts FlexibleInstances FunctionalDependencies GADTs GeneralizedNewtypeDeriving InstanceSigs LambdaCase MultiParamTypeClasses NamedFieldPuns NoImplicitPrelude OverloadedStrings RankNTypes ScopedTypeVariables TypeFamilies TypeOperators
+  ghc-options: -Wall
+  build-depends:
+      base
+    , bytestring
+    , containers
+    , directory
+    , filepath
+    , hashable
+    , hspec
+    , llvm-hs
+    , llvm-hs-pure
+    , llvm-in-haskell
+    , pretty-show
+    , process
+    , text
+    , unordered-containers
+  default-language: Haskell2010

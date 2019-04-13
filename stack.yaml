@@ -1,0 +1,14 @@
+resolver: lts-12.9
+extra-deps:
+
+  # This snapshot uses 6, but Ubuntu is up t 7 so we'll use that
+  - llvm-hs-7.0.1
+
+  # The very latest 7, needed because the fix for this issue isn't on Hackage yet:
+  #
+  # https://github.com/llvm-hs/llvm-hs/issues/245
+  #
+  - git: git@github.com:llvm-hs/llvm-hs
+    commit: 3b4e35e1abd88f8f30400242503d7cb25f9be253
+    subdirs:
+      - llvm-hs-pure
